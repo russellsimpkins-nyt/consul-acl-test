@@ -13,10 +13,10 @@ cd /vagrant
 
 It could be more elegant, but this way you get to watch the logs. All boxes have the consul ui running
 
-http://192.168.33.10:8500/ui
-http://192.168.33.11:8500/ui
-http://192.168.33.12:8500/ui
-http://192.168.33.13:8500/ui
+- http://192.168.33.10:8500/ui
+- http://192.168.33.11:8500/ui
+- http://192.168.33.12:8500/ui
+- http://192.168.33.13:8500/ui
 
 You can't simply configure the cluster to have ACLs. To add ACLs you can use the UI on .11 or you can use this tool
 
