@@ -1,0 +1,6 @@
+{
+"ID": "551aa142-738a-9b34-3905-170a91d0fe4c",
+"Name": "xps_du",
+"Type": "client",
+"Rules": "key \"some\" {\n policy =\"write\"\n}\nkey \"\" {\npolicy = \"deny\"\n}"
+}

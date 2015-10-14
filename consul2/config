@@ -1,0 +1,4 @@
+#!/bin/bash
+
+export IP=192.168.33.11
+export NAME=consul2

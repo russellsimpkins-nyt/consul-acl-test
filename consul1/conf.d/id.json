@@ -1,0 +1,6 @@
+{
+"node_name":"consul1",
+"bind_addr":"192.168.33.10",
+"client_addr":"192.168.33.10",
+"acl_token":""
+}

@@ -1,0 +1,26 @@
+{
+"server": true,
+"bootstrap_expect": 1,
+"encrypt": "xmHI8DbXndRb0WGY/JGVtA==",
+"enable_syslog": true,
+"pid_file": "/var/run/consul.pid",
+"data_dir": "/var/consul",
+"datacenter": "dc1",
+"disable_remote_exec": true,
+"disable_update_check": true,
+"dns_config": {
+  "allow_stale": true,
+  "max_stale": "50s",
+  "node_ttl": "0s",
+  "only_passing": true},
+"http_api_response_headers": {
+  "Access-Control-Allow-Origin": "*"},
+"ports":{
+"dns":  8600,
+"http": 8500,
+"rpc": 8400,
+"serf_lan": 8301,
+"serf_wan": 8302,
+"server": 8300 },
+"ui_dir": "/vagrant/dist"
+}

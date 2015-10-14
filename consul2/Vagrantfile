@@ -1,0 +1,37 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# All Vagrant configuration is done below. The "2" in Vagrant.configure
+# configures the configuration version (we support older styles for
+# backwards compatibility). Please don't change it unless you know what
+# you're doing.
+Vagrant.configure(2) do |config|
+  # The most common configuration options are documented and commented below.
+  # For a complete reference, please see the online documentation at
+  # https://docs.vagrantup.com.
+
+  # Every Vagrant development environment requires a box. You can search for
+  # boxes at https://atlas.hashicorp.com/search.
+  config.vm.box = "centos-6.6-64-puppet"
+  config.vm.box_url = "https://s3.amazonaws.com/platform-repo.ec2.nytimes.com/dev/shared/virtualbox/centos-6.6-x86_64-puppet-3.7.4-1.box"
+  config.vm.network :private_network, ip: "192.168.33.11"
+  config.vm.provider "virtualbox" do |v|
+    v.memory = 512
+    v.cpus = 1
+  end
+
+    config.vm.provision "shell", inline: <<-SHELL
+
+sudo yum install -y emacs-nox
+sudo chkconfig iptables off 123456
+sudo /etc/init.d/iptables stop
+cd /vagrant
+if [ ! -f /vagrant/consul ]; then
+  unzip /vagrant/consul.zip
+fi
+sudo echo "NETWORKING=yes
+HOSTNAME=consul2" > /etc/sysconfig/network
+  hostname consul2
+  SHELL
+  
+end
